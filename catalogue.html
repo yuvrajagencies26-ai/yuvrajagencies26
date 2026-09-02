@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="description" content="Yuvaraj Agencies product catalogue"><title>Products | Yuvaraj Agencies</title><link rel="icon" href="favicon.ico"><link rel="stylesheet" href="styles.css"></head><body><header class="site-header">
+<div class="container nav">
+<a class="brand" href="index.html"><img class="brand-logo" src="logo.jpeg" alt="Yuvaraj Agencies logo"><span class="brand-copy"><strong id="brandName">YUVARAJ AGENCIES</strong><small>Premium Crackers</small></span></a>
+<nav class="payment-nav" aria-label="Main navigation">
+<a href="index.html" class="">Home</a>
+<a href="catalogue.html" class="active">Products</a>
+<a href="enquiry.html" class="">Enquiry</a>
+<a href="payments.html" class="">Payment</a>
+</nav>
+<button class="nav-mobile-toggle" type="button" onclick="toggleMobileNav()" aria-label="Menu">☰</button>
+<div class="nav-actions">
+<button class="ghost-btn theme-toggle" onclick="toggleDarkMode()" aria-label="Toggle theme"><span id="themeIcon">🌙</span></button>
+<a class="whatsapp-btn header-whatsapp" id="headerWhatsApp" href="#" aria-label="WhatsApp"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.004 2a9.92 9.92 0 1 0 5.468 16.2L22 22l-3.8-1.1A9.92 9.92 0 0 0 12.004 2m0 18.18a8.25 8.25 0 0 1-4.21-1.155l-.3-.178-3.015.878.884-2.94-.196-.302A8.24 8.24 0 1 1 12.004 20.18"/></svg> <span>WhatsApp</span></a>
+<a class="cart-button primary-btn" href="enquiry.html">🛒 <span>Enquiry</span> <b id="cartCount">0</b></a>
+</div>
+</div></header><main><section class="catalogue-hero"><div class="container"><div class="eyebrow">YUVARAJ AGENCIES • CUSTOMER CATALOGUE</div><h1>Browse. Select. <span>Enquire.</span></h1><p>Find the products you need, compare options, save favourites and add your selection to an enquiry.</p><div class="catalogue-hero-actions"><a class="primary-btn" href="#productsSection">Browse Products</a><a class="ghost-btn" href="enquiry.html">Open Enquiry</a></div></div></section><section class="tools container reveal"><div class="search-box advanced-search"><span>⌕</span><input id="searchInput" oninput="searchProducts()" placeholder="Search by product name or category…"><kbd>/</kbd><button id="clearSearch" onclick="clearSearch()">×</button></div><div class="select-wrap"><span>↕</span><select id="sortSelect" onchange="sortProducts()"><option value="default">Sort products</option><option value="popular">Popular first</option><option value="price-low">Price: Low to High</option><option value="price-high">Price: High to Low</option><option value="name">Name A–Z</option></select></div><div class="select-wrap"><span>◉</span><select id="availabilityFilter" onchange="setAvailability()"><option value="all">All Stock</option><option value="available">Available</option><option value="low">Low Stock</option><option value="out">Out of Stock</option><option value="pending">Rate Pending</option></select></div><button class="favorite-filter-btn" onclick="showFavoritesOnly()">♥ Favorites <b id="favoriteCount">0</b></button></section><section class="category-strip container reveal"><button class="category-btn active" onclick="filterProducts('All',this)">All</button><div id="categoryButtons"></div></section><section id="productsSection" class="container products-section reveal"><div class="section-heading"><div><p class="eyebrow">FULL CATALOGUE</p><h2>All Products</h2></div><div class="results-meta"><b id="resultCount">0</b> products <button class="ghost-btn mini-reset" onclick="resetFilters()">Reset</button></div></div><div class="filter-price"><label>Maximum Price <b id="priceValue">₹5,000+</b></label><input id="priceRange" type="range" min="20" max="5000" step="10" value="5000" oninput="setPriceFilter()"></div><div id="productGrid" class="product-grid"></div></section></main><footer class="site-footer"><div class="container footer-main">
+<div class="footer-brand-block"><a class="footer-brand" href="index.html"><img class="footer-logo" src="logo.jpeg" alt="Yuvaraj Agencies logo"><span><strong id="footerBrandName">YUVARAJ AGENCIES</strong><small>Premium Customer Enquiry</small></span></a><p>Browse products, build an enquiry, download the PDF and contact us on WhatsApp.</p></div>
+<div class="footer-column"><h4>Quick Links</h4><a href="index.html">Home</a><a href="catalogue.html">Products</a><a href="enquiry.html">Enquiry</a><a href="payments.html">Payment</a></div>
+<div class="footer-column"><h4>Products</h4><a href="catalogue.html">All Products</a><a href="catalogue.html?category=SPARKLERS">Sparklers</a><a href="catalogue.html?category=FLOWER%20POTS">Flower Pots</a><a href="catalogue.html?category=COMBO%20OFFERS">Combo Offers</a></div>
+<div class="footer-column footer-contact"><h4>Contact</h4><a id="footerPhone" href="#">📞 Phone</a><a id="footerEmail" href="#">✉️ Email</a><span id="footerAddress">📍 Address</span><a id="footerWA" href="#"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.004 2a9.92 9.92 0 1 0 5.468 16.2L22 22l-3.8-1.1A9.92 9.92 0 0 0 12.004 2m0 18.18a8.25 8.25 0 0 1-4.21-1.155l-.3-.178-3.015.878.884-2.94-.196-.302A8.24 8.24 0 1 1 12.004 20.18"/></svg> <span>WhatsApp</span></a></div>
+</div><div class="container footer-bottom"><span>© <b id="footerYear">2026</b> <span id="footerBottomBrand">Yuvaraj Agencies</span>. All rights reserved.</span><span>Customer Products • Enquiry • PDF • Payment</span></div></footer><div id="toast" class="toast"></div><script src="app.js"></script><script>
+function toggleMobileNav(){document.querySelector('.payment-nav')?.classList.toggle('mobile-open')}
+function forceCatalogueRender(){
+  try{
+    if(typeof applyBusinessConfig==='function') applyBusinessConfig();
+    if(typeof normalizeCartToCurrentProducts==='function') normalizeCartToCurrentProducts();
+    if(typeof renderCategories==='function') renderCategories();
+    currentCategory="All"; currentSort="default"; currentAvailability="all"; currentMaxPrice=5000;
+    if(typeof renderProducts==='function') renderProducts(products);
+    const grid=document.getElementById('productGrid');
+    if(grid && !grid.children.length && Array.isArray(products) && products.length){
+      grid.innerHTML='<div class="empty-products"><div>⚠️</div><h3>Products could not be loaded</h3><p>Please refresh the page.</p></div>';
+    }
+    const result=document.getElementById('resultCount'); if(result) result.textContent=Array.isArray(products)?products.length:0;
+  }catch(error){
+    console.error('Catalogue render error:',error);
+    const grid=document.getElementById('productGrid');
+    if(grid) grid.innerHTML='<div class="empty-products"><div>⚠️</div><h3>Products could not be loaded</h3><p>Please refresh the page.</p></div>';
+  }
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const c=BUSINESS_CONFIG;
+  const n=document.getElementById('headerWhatsApp');
+  if(n)n.href='https://wa.me/'+String(c.whatsapp).replace(/\D/g,'')+'?text='+encodeURIComponent('Hello '+c.name+', I have an enquiry.');
+  const fp=document.getElementById('footerPhone');if(fp){fp.textContent='📞 '+c.phone;fp.href='tel:'+c.phone.replace(/\D/g,'')}
+  const fe=document.getElementById('footerEmail');if(fe){fe.textContent='✉️ '+c.email;fe.href='mailto:'+c.email}
+  const fa=document.getElementById('footerAddress');if(fa)fa.textContent='📍 '+c.address;
+  const fwa=document.getElementById('footerWA');if(fwa)fwa.href=n?.href||'#';
+  const fy=document.getElementById('footerYear');if(fy)fy.textContent=new Date().getFullYear();
+  const fc=document.getElementById('favoriteCount');if(fc && typeof wishlist!=='undefined')fc.textContent=wishlist.length;
+  forceCatalogueRender();
+});
+</script>
+<style>
+/* Catalogue safety patch: never hide the actual product list behind reveal animation. */
+#productsSection.products-section.reveal{opacity:1!important;transform:none!important;visibility:visible!important}
+#productGrid{min-height:120px}
+#productGrid .product-card{visibility:visible!important;opacity:1!important}
+</style></body></html>

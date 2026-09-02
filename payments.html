@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Payment | Yuvaraj Agencies</title><link rel="icon" href="favicon.ico"><link rel="stylesheet" href="styles.css"></head>
+<body class="pay-page">
+<header class="site-header">
+<div class="container nav">
+<a class="brand" href="index.html"><img class="brand-logo" src="logo.jpeg" alt="Yuvaraj Agencies logo"><span class="brand-copy"><strong id="brandName">YUVARAJ AGENCIES</strong><small>Premium Crackers</small></span></a>
+<nav class="payment-nav" aria-label="Main navigation">
+<a href="index.html" class="">Home</a>
+<a href="catalogue.html" class="">Products</a>
+<a href="enquiry.html" class="">Enquiry</a>
+<a href="payments.html" class="active">Payment</a>
+</nav>
+<button class="nav-mobile-toggle" type="button" onclick="toggleMobileNav()" aria-label="Menu">☰</button>
+<div class="nav-actions">
+<button class="ghost-btn theme-toggle" onclick="toggleDarkMode()" aria-label="Toggle theme"><span id="themeIcon">🌙</span></button>
+<a class="whatsapp-btn header-whatsapp" id="headerWhatsApp" href="#" aria-label="WhatsApp"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.004 2a9.92 9.92 0 1 0 5.468 16.2L22 22l-3.8-1.1A9.92 9.92 0 0 0 12.004 2m0 18.18a8.25 8.25 0 0 1-4.21-1.155l-.3-.178-3.015.878.884-2.94-.196-.302A8.24 8.24 0 1 1 12.004 20.18"/></svg> <span>WhatsApp</span></a>
+<a class="cart-button primary-btn" href="enquiry.html">🛒 <span>Enquiry</span> <b id="cartCount">0</b></a>
+</div>
+</div></header>
+<main class="pay-wrap">
+<section class="hero"><div class="eyebrow"><i class="dot"></i> SECURE PAYMENT CENTER</div><h1>Simple. Secure. <span>Professional.</span></h1><p>Choose your preferred payment method. Complete the payment and send the screenshot or UTR to our WhatsApp for confirmation.</p><div class="trust"><span>✓ UPI / QR</span><span>✓ Bank Transfer</span><span>✓ WhatsApp Confirmation</span><span>✓ Mobile Friendly</span></div></section>
+<section class="summary"><div><small>PAYEE</small><strong id="payee">Yuvaraj Agencies</strong></div><div><small>PAYMENT TYPE</small><strong>Order / Enquiry</strong></div><div><small>SUPPORT</small><strong>WhatsApp Available</strong></div></section>
+<section class="methods">
+<article class="method"><div class="method-head"><div class="icon">📱</div><div><div class="badge">OPTION 01</div><h2>UPI / QR Payment</h2></div></div><p class="method-desc">Scan the QR with Google Pay, PhonePe, Paytm or your preferred UPI app.</p>
+<div class="qr"><img src="upi-1.png" alt="Raja Canara Bank UPI QR"></div><div class="scan">SCAN & PAY USING ANY UPI APP</div>
+<div class="info upi-row"><div><label>UPI ID</label><strong id="upi">rengarajrengaraj0179-1@okaxis</strong></div><button class="copy" onclick="copyText(document.getElementById('upi').textContent)">COPY</button></div>
+<div class="info amount-box"><label>PAYMENT AMOUNT FROM CART</label><div class="amount-readonly"><span>₹</span><strong id="paymentAmount">0</strong></div><small>This amount is fetched automatically from your current enquiry cart and cannot be edited.</small></div>
+<a id="upiBtn" class="open-upi" href="#" aria-disabled="true">Open UPI App ↗</a></article>
+<article class="method bank"><div class="method-head"><div class="icon">🏦</div><div><div class="badge">OPTION 02</div><h2>Bank Transfer</h2></div></div><p class="method-desc">Use NEFT, IMPS or RTGS after confirming the payable amount with us.</p>
+<div class="info bank-list"><div class="bank-row"><span>BANK NAME</span><strong id="bank">YOUR BANK NAME</strong></div><div class="bank-row"><span>ACCOUNT NAME</span><strong id="accName">YUVARAJ AGENCIES</strong></div><div class="bank-row"><span>ACCOUNT NUMBER</span><strong id="accNo">XXXX XXXX XXXX</strong></div><div class="bank-pair"><div class="bank-row"><span>IFSC</span><strong id="ifsc">XXXX0000000</strong></div><div class="bank-row"><span>BRANCH</span><strong id="branch">SIVAKASI</strong></div></div></div><button class="copy" style="width:100%;margin-top:14px" onclick="copyBank()">COPY BANK DETAILS</button></article>
+</section>
+<section class="payment-action"><div><div class="eyebrow">PAYMENT CONFIRMATION</div><h2>Payment completed?</h2><p>Send your payment screenshot or UTR number to us on WhatsApp.</p></div><a id="confirmWA" class="wa-btn" href="#"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.004 2a9.92 9.92 0 1 0 5.468 16.2L22 22l-3.8-1.1A9.92 9.92 0 0 0 12.004 2m0 18.18a8.25 8.25 0 0 1-4.21-1.155l-.3-.178-3.015.878.884-2.94-.196-.302A8.24 8.24 0 1 1 12.004 20.18"/></svg> Send Confirmation</a></section>
+<section class="steps"><h2>How to pay</h2><div class="step-grid"><div class="step"><b>01</b><strong>Choose a method</strong><span>Use UPI QR or bank transfer.</span></div><div class="step"><b>02</b><strong>Complete payment</strong><span>Pay the confirmed amount securely.</span></div><div class="step"><b>03</b><strong>Confirm on WhatsApp</strong><span>Share screenshot or UTR for verification.</span></div></div></section>
+</main>
+<footer class="site-footer"><div class="container footer-main">
+<div class="footer-brand-block"><a class="footer-brand" href="index.html"><img class="footer-logo" src="logo.jpeg" alt="Yuvaraj Agencies logo"><span><strong id="footerBrandName">YUVARAJ AGENCIES</strong><small>Premium Customer Enquiry</small></span></a><p>Browse products, build an enquiry, download the PDF and contact us on WhatsApp.</p></div>
+<div class="footer-column"><h4>Quick Links</h4><a href="index.html">Home</a><a href="catalogue.html">Products</a><a href="enquiry.html">Enquiry</a><a href="payments.html">Payment</a></div>
+<div class="footer-column"><h4>Products</h4><a href="catalogue.html">All Products</a><a href="catalogue.html?category=SPARKLERS">Sparklers</a><a href="catalogue.html?category=FLOWER%20POTS">Flower Pots</a><a href="catalogue.html?category=COMBO%20OFFERS">Combo Offers</a></div>
+<div class="footer-column footer-contact"><h4>Contact</h4><a id="footerPhone" href="#">📞 Phone</a><a id="footerEmail" href="#">✉️ Email</a><span id="footerAddress">📍 Address</span><a id="footerWA" href="#"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.004 2a9.92 9.92 0 1 0 5.468 16.2L22 22l-3.8-1.1A9.92 9.92 0 0 0 12.004 2m0 18.18a8.25 8.25 0 0 1-4.21-1.155l-.3-.178-3.015.878.884-2.94-.196-.302A8.24 8.24 0 1 1 12.004 20.18"/></svg> <span>WhatsApp</span></a></div>
+</div><div class="container footer-bottom"><span>© <b id="footerYear">2026</b> <span id="footerBottomBrand">Yuvaraj Agencies</span>. All rights reserved.</span><span>Customer Products • Enquiry • PDF • Payment</span></div></footer>
+<script src="app.js"></script><script>
+function toggleTheme(){toggleDarkMode();}
+function copyText(t){navigator.clipboard?.writeText(t).then(()=>showToast?.("Copied successfully")).catch(()=>{});}
+function copyBank(){copyText("Bank: "+BUSINESS_CONFIG.bankName+"\nAccount Name: "+BUSINESS_CONFIG.accountName+"\nAccount Number: "+BUSINESS_CONFIG.accountNumber+"\nIFSC: "+BUSINESS_CONFIG.ifscCode+"\nBranch: "+BUSINESS_CONFIG.bankBranch);}
+function setupUPIPayment(){
+  const c=BUSINESS_CONFIG, amountEl=document.getElementById("paymentAmount"), btn=document.getElementById("upiBtn"), confirm=document.getElementById("confirmWA");
+  if(!amountEl||!btn)return;
+  const update=()=>{
+    const amount=typeof getCartPayableTotal==="function"?getCartPayableTotal():0;
+    amountEl.textContent=amount.toLocaleString("en-IN");
+    const valid=amount>0;
+    if(valid){
+      btn.href="upi://pay?pa="+encodeURIComponent(c.upiId)+"&pn="+encodeURIComponent(c.payeeName||c.name)+"&am="+encodeURIComponent(amount.toFixed(2))+"&cu=INR&tn="+encodeURIComponent(c.paymentNote||"Payment");
+      btn.removeAttribute("aria-disabled"); btn.classList.remove("disabled");
+      if(confirm)confirm.href="https://wa.me/"+String(c.whatsapp||"").replace(/\D/g,"")+"?text="+encodeURIComponent("Hello "+c.name+", I have completed a payment of ₹"+amount.toFixed(2)+". I will share the payment screenshot / UTR here.");
+    }else{
+      btn.href="#";btn.setAttribute("aria-disabled","true");btn.classList.add("disabled");
+      if(confirm)confirm.href="https://wa.me/"+String(c.whatsapp||"").replace(/\D/g,"")+"?text="+encodeURIComponent("Hello "+c.name+", I have completed my payment. I will share the payment screenshot / UTR here.");
+    }
+  };
+  update();
+  window.addEventListener("storage",update);
+  window.addEventListener("pageshow",update);
+}
+document.addEventListener("DOMContentLoaded",()=>{
+  applyBusinessConfig(); const c=BUSINESS_CONFIG, n=String(c.whatsapp||"").replace(/\D/g,"");
+  document.getElementById("brandName").textContent=c.name;
+  document.getElementById("payee").textContent=c.payeeName||c.name;
+  document.getElementById("upi").textContent=c.upiId;
+  document.getElementById("bank").textContent=c.bankName;document.getElementById("accName").textContent=c.accountName;document.getElementById("accNo").textContent=c.accountNumber;document.getElementById("ifsc").textContent=c.ifscCode;document.getElementById("branch").textContent=c.bankBranch;
+  const h=document.getElementById("headerWhatsApp"), fwa=document.getElementById("footerWA");
+  const wa="https://wa.me/"+n+"?text="+encodeURIComponent("Hello "+c.name+", I have a payment enquiry.");
+  if(h)h.href=wa;if(fwa)fwa.href=wa;
+  const fp=document.getElementById("footerPhone");if(fp){fp.textContent="📞 "+c.phone;fp.href="tel:"+c.phone.replace(/\D/g,"")}
+  const fe=document.getElementById("footerEmail");if(fe){fe.textContent="✉️ "+c.email;fe.href="mailto:"+c.email}
+  const fa=document.getElementById("footerAddress");if(fa)fa.textContent="📍 "+c.address;
+  const fb=document.getElementById("footerBrandName");if(fb)fb.textContent=c.name;
+  const fbb=document.getElementById("footerBottomBrand");if(fbb)fbb.textContent=c.name;
+  const fy=document.getElementById("footerYear");if(fy)fy.textContent=new Date().getFullYear();
+  if(localStorage.getItem("yuvaraj_dark")==="1")document.body.classList.add("dark-mode");
+  setupUPIPayment();
+});
+</script></body></html>

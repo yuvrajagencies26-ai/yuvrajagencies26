@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Create a professional Yuvaraj Agencies customer enquiry PDF and send the enquiry through WhatsApp.">
+<title>Enquiry | Yuvaraj Agencies</title>
+<link rel="icon" href="favicon.ico"><link rel="stylesheet" href="styles.css">
+</head>
+<body class="enquiry-page">
+<header class="site-header">
+<div class="container nav">
+<a class="brand" href="index.html"><img class="brand-logo" src="logo.jpeg" alt="Yuvaraj Agencies logo"><span class="brand-copy"><strong id="brandName">YUVARAJ AGENCIES</strong><small>Premium Crackers</small></span></a>
+<nav class="payment-nav" aria-label="Main navigation">
+<a href="index.html" class="">Home</a>
+<a href="catalogue.html" class="">Products</a>
+<a href="enquiry.html" class="active">Enquiry</a>
+<a href="payments.html" class="">Payment</a>
+</nav>
+<button class="nav-mobile-toggle" type="button" onclick="toggleMobileNav()" aria-label="Menu">☰</button>
+<div class="nav-actions">
+<button class="ghost-btn theme-toggle" onclick="toggleDarkMode()" aria-label="Toggle theme"><span id="themeIcon">🌙</span></button>
+<a class="whatsapp-btn header-whatsapp" id="headerWhatsApp" href="#" aria-label="WhatsApp"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.004 2a9.92 9.92 0 1 0 5.468 16.2L22 22l-3.8-1.1A9.92 9.92 0 0 0 12.004 2m0 18.18a8.25 8.25 0 0 1-4.21-1.155l-.3-.178-3.015.878.884-2.94-.196-.302A8.24 8.24 0 1 1 12.004 20.18"/></svg> <span>WhatsApp</span></a>
+<a class="cart-button primary-btn" href="enquiry.html">🛒 <span>Enquiry</span> <b id="cartCount">0</b></a>
+</div>
+</div></header>
+<main>
+<section class="payments-hero enquiry-hero"><div class="container">
+  <div class="payments-heading reveal visible">
+    <div class="eyebrow"><span class="live-dot"></span> CUSTOMER ENQUIRY</div>
+    <h1>Build your <span>enquiry PDF</span></h1>
+    <p>Select products on the catalogue, come here, enter your details and create a polished A4 PDF. You can also send the enquiry to Yuvaraj Agencies on WhatsApp.</p>
+    <div class="payment-trust"><span>✓ No Login</span><span>✓ No Database</span><span>✓ Instant PDF</span><span>✓ WhatsApp</span></div>
+  </div>
+</div></section>
+<section class="container enquiry-page-wrap">
+  <div class="enquiry-layout">
+    <div class="enquiry-list-card">
+      <div class="section-heading"><div><p class="eyebrow">STEP 01</p><h2>Selected Products</h2></div><div class="enquiry-selection-actions"><a class="ghost-btn" href="catalogue.html">+ Add Products</a><button class="cancel-selected-btn" type="button" onclick="clearSelectedProducts()">Cancel Selection</button></div></div>
+      <div id="cartItems"></div>
+      <div class="cart-summary"><p>Items <b id="cartQtyTotal">0</b></p><p>Subtotal <b id="cartSubtotal">₹0</b></p><p>Discount <b id="cartDiscount">− ₹0</b></p><h3>Estimated Total: ₹<span id="cartTotal">0</span></h3><p id="pendingNote" class="pending-note">Some items have rate pending.</p></div>
+    </div>
+    <div class="enquiry-form-card">
+      <div class="form-section-title"><span>👤</span><div><strong>STEP 02 — Customer Details</strong><small>Name and mobile are required</small></div></div>
+      <div class="customer-form enquiry-details" id="customerDetailsForm">
+        <label>Your Name *<input id="customerName" autocomplete="name" placeholder="Enter your name"></label>
+        <label>Mobile Number *<input id="customerPhone" autocomplete="tel" inputmode="numeric" placeholder="10-digit mobile number" maxlength="10"></label>
+        <label>Email (optional)<input id="customerEmail" autocomplete="email" type="email" placeholder="you@example.com"></label>
+        <label>Delivery Address *<textarea id="customerAddress" autocomplete="street-address" placeholder="House / street / area / city" required></textarea></label>
+        <label>Notes (optional)<textarea id="customerNotes" placeholder="Preferred delivery date, special request, etc."></textarea></label>
+      </div>
+      <div class="enquiry-cta">
+        <div><span class="cta-kicker">STEP 03</span><h3>Ready to send?</h3><p>Download the PDF or use the WhatsApp action. On supported mobile browsers, the PDF can be shared directly from the share sheet.</p></div>
+        <div class="cta-actions"><button class="secondary-btn" onclick="generatePDF()">📄 Download PDF</button><button class="whatsapp-btn" onclick="generateAndWhatsApp()"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.004 2a9.92 9.92 0 1 0 5.468 16.2L22 22l-3.8-1.1A9.92 9.92 0 0 0 12.004 2m0 18.18a8.25 8.25 0 0 1-4.21-1.155l-.3-.178-3.015.878.884-2.94-.196-.302A8.24 8.24 0 1 1 12.004 20.18"/></svg> PDF + WhatsApp</button></div>
+      </div>
+      <a class="payment-banner" href="payments.html"><span>💳</span><div><strong>Need to make payment?</strong><small>Open the UPI payment page</small></div><b>→</b></a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer"><div class="container footer-main">
+<div class="footer-brand-block"><a class="footer-brand" href="index.html"><img class="footer-logo" src="logo.jpeg" alt="Yuvaraj Agencies logo"><span><strong id="footerBrandName">YUVARAJ AGENCIES</strong><small>Premium Customer Enquiry</small></span></a><p>Browse products, build an enquiry, download the PDF and contact us on WhatsApp.</p></div>
+<div class="footer-column"><h4>Quick Links</h4><a href="index.html">Home</a><a href="catalogue.html">Products</a><a href="enquiry.html">Enquiry</a><a href="payments.html">Payment</a></div>
+<div class="footer-column"><h4>Products</h4><a href="catalogue.html">All Products</a><a href="catalogue.html?category=SPARKLERS">Sparklers</a><a href="catalogue.html?category=FLOWER%20POTS">Flower Pots</a><a href="catalogue.html?category=COMBO%20OFFERS">Combo Offers</a></div>
+<div class="footer-column footer-contact"><h4>Contact</h4><a id="footerPhone" href="#">📞 Phone</a><a id="footerEmail" href="#">✉️ Email</a><span id="footerAddress">📍 Address</span><a id="footerWA" href="#"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.004 2a9.92 9.92 0 1 0 5.468 16.2L22 22l-3.8-1.1A9.92 9.92 0 0 0 12.004 2m0 18.18a8.25 8.25 0 0 1-4.21-1.155l-.3-.178-3.015.878.884-2.94-.196-.302A8.24 8.24 0 1 1 12.004 20.18"/></svg> <span>WhatsApp</span></a></div>
+</div><div class="container footer-bottom"><span>© <b id="footerYear">2026</b> <span id="footerBottomBrand">Yuvaraj Agencies</span>. All rights reserved.</span><span>Customer Products • Enquiry • PDF • Payment</span></div></footer>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+<script>
+function clearSelectedProducts(){
+  if(!cart.length){showToast("No selected products to cancel.");return;}
+  if(confirm("Cancel all selected products?")){cart=[];saveCart();updateCartUI();showToast("Selected products cancelled.");}
+}
+
+document.addEventListener("DOMContentLoaded",()=>{applyBusinessConfig();const c=BUSINESS_CONFIG;document.getElementById("brandName").textContent=c.name;document.getElementById("footerBrandName").textContent=c.name;document.getElementById("footerBottomBrand").textContent=c.name;document.getElementById("footerYear").textContent=new Date().getFullYear();const ph=document.getElementById("footerPhone");ph.textContent="📞 "+c.phone;ph.href="tel:"+c.phone.replace(/\D/g,"");const em=document.getElementById("footerEmail");em.textContent="✉️ "+c.email;em.href="mailto:"+c.email;updateCartUI();});
+</script>
+<script>
+function toggleMobileNav(){const n=document.querySelector(".payment-nav");if(n)n.classList.toggle("mobile-open");}
+document.addEventListener("click",e=>{const n=document.querySelector(".payment-nav");const b=document.querySelector(".nav-mobile-toggle");if(n&&n.classList.contains("mobile-open")&&!n.contains(e.target)&&b&&!b.contains(e.target))n.classList.remove("mobile-open");});
+</script>
+<script>function openHeaderWA(e){e.preventDefault();const c=BUSINESS_CONFIG;const n=String(c.whatsapp||'').replace(/\D/g,'');if(n)window.location.href='https://wa.me/'+n+'?text='+encodeURIComponent('Hello '+c.name+', I have an enquiry.');return false;}function toggleMobileNav(){document.querySelector('.payment-nav')?.classList.toggle('mobile-open')}</script></body></html>
