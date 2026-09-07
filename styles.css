@@ -276,7 +276,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .nav-payment-link{text-decoration:none;display:inline-flex;align-items:center}.payment-card-link p{min-height:38px}.payment-page-btn{text-decoration:none;display:inline-flex;margin-top:6px}.payments-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}.payment-panel{padding:28px;border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.1);box-shadow:0 25px 70px rgba(0,0,0,.28);text-align:center;backdrop-filter:blur(18px)}@media(max-width:800px){.payments-wrap{grid-template-columns:1fr;gap:30px}.payments-intro{text-align:center}.payments-intro>p:not(.eyebrow){margin-left:auto;margin-right:auto}.payment-trust{justify-content:center}.payment-steps{grid-template-columns:1fr}.payment-warning p{display:block;margin:7px 0 0}.nav-payment-link{display:none}}
 
 /* =========================================================
-   ADVANCED UPI PAYMENT PAGE — YUVARAJ AGENCIES
+   ADVANCED UPI PAYMENT PAGE — Madhan Crackers
    ========================================================= */
 .payment-header{position:sticky;top:0;z-index:50;background:rgba(7,9,16,.82)!important;backdrop-filter:blur(22px);border-bottom:1px solid rgba(255,255,255,.08)}.payment-nav a:hover{color:#fff;background:rgba(255,255,255,.055)}
 .payments-hero{position:relative;overflow:hidden;padding:78px 0 58px;background:radial-gradient(circle at 8% 10%,rgba(255,49,88,.12),transparent 28%),radial-gradient(circle at 92% 20%,rgba(124,77,255,.15),transparent 32%),linear-gradient(180deg,#090b13 0%,#0b0d16 100%)}.payments-hero:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent 82%)}
@@ -299,7 +299,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 @media(max-width:600px){.payment-nav .main-nav a{white-space:nowrap;padding:9px 10px}.payment-nav .nav-actions .ghost-btn{display:none}.payment-nav .nav-actions .primary-btn{padding:10px 12px}.payments-intro>p:not(.eyebrow){font-size:14px}.qr-frame{max-width:235px}}
 
 /* =========================================================
-   YUVARAJ AGENCIES — PAYMENT PAGE UI/UX POLISH v6
+   Madhan Crackers — PAYMENT PAGE UI/UX POLISH v6
    Keeps the payment page visually consistent with the main store:
    red + gold + cyan accents, softer surfaces, clearer hierarchy.
    ========================================================= */
@@ -662,7 +662,7 @@ body:not(.dark-mode) .site-footer{
 .dark-mode.payments-page .payment-action-panel{background:linear-gradient(110deg,rgba(215,25,63,.13),rgba(242,184,75,.08),#151b29)!important}
 .dark-mode.payments-page .secondary-btn{background:#fff!important;color:#111827!important}
 .dark-mode.payments-page .copy-btn{background:#fff!important;color:#111827!important}
-/* YUVARAJ AGENCIES — MODERN CSS LAB
+/* Madhan Crackers — MODERN CSS LAB
    Progressive enhancement layer: preserves the existing design while using modern CSS.
 */
 @layer reset, tokens, layout, components, effects, accessibility, enhancements;
@@ -1255,7 +1255,7 @@ body:not(.dark-mode) .pay-page .footer{background:#111522!important;color:#aeb6c
   .steps-row{grid-template-columns:1fr}
 }
 /*
-  YUVARAJ AGENCIES — ADVANCED CSS V3
+  Madhan Crackers — ADVANCED CSS V3
   Modern CSS features applied where they materially improve the UI.
 */
 /* 01–10: Architecture, tokens, cascade and specificity */
@@ -1834,7 +1834,7 @@ body:not(.dark-mode) .pay-page .footer{background:#111522!important;color:#aeb6c
     }
   }
 }
-/* YUVARAJ AGENCIES — FINAL ADVANCED CSS INTEGRATION (UNLAYERED LAST) */
+/* Madhan Crackers — FINAL ADVANCED CSS INTEGRATION (UNLAYERED LAST) */
 :root{
   --bg:#070910;
   --bg-2:#0c101b;

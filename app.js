@@ -1,16 +1,16 @@
-/* Yuvaraj Agencies — Consolidated JavaScript bundle
+/* Madhan Crackers — Consolidated JavaScript bundle
    Original feature/data modules combined in dependency order.
 */
 
 /* ===== config.js ===== */
 /* ===== config.js ===== */
 const BUSINESS_CONFIG = {
-  name: "YUVARAJ AGENCIES",
+  name: "Madhan Crackers",
   tagline: "Sivakasi • Quality • Value",
   phone: "+91 63743 29677",
   email: "rengarajrengaraj0179@gmail.com",
   address: "Meenapatti, Sivakasi, Tamil Nadu",
-  mapQuery: "Yuvaraj Agencies Meenapatti Sivakasi",
+  mapQuery: "Madhan Crackers Meenapatti Sivakasi",
   logo: "logo.jpeg",
   currency: "₹",
   pdfFilePrefix: "Yuvaraj-Agencies-Enquiry",
@@ -18,7 +18,7 @@ const BUSINESS_CONFIG = {
   whatsapp: "916374329677",
   upiId: "rengarajrengaraj0179-1@okaxis",
   payeeName: "Raja",
-  paymentNote: "Yuvaraj Agencies Payment",
+  paymentNote: "Madhan Crackers Payment",
   // Bank transfer placeholders — replace these before publishing.
   bankName: "CANARA BANK",
   accountName: "Nagalakshmi",
@@ -1472,7 +1472,7 @@ function openWhatsAppDirect(){
 
 /* ===== pdf.js ===== */
 /*
-  Yuvaraj Agencies — Material List PDF
+  Madhan Crackers — Material List PDF
   V13: Alternative premium branded template. PDF only; all website features/layout remain unchanged.
   Dependency-free A4 PDF generator.
 */
@@ -1554,7 +1554,7 @@ function buildHeader(page,c,ref,date,period){
   page.push({type:'rect',x:0,y:842,w:595,h:104,fill:PDF_COLORS.navy});
   page.push({type:'rect',x:0,y:738,w:595,h:6,fill:PDF_COLORS.red});
   page.push({type:'rect',x:0,y:732,w:595,h:2,fill:PDF_COLORS.gold});
-  drawText(page,biz.name||'YUVARAJ AGENCIES',30,812,21,PDF_COLORS.white,true);
+  drawText(page,biz.name||'Madhan Crackers',30,812,21,PDF_COLORS.white,true);
   drawText(page,'MATERIAL SUPPLY • CUSTOMER ENQUIRY',30,792,8.2,[0.84,0.89,0.94],true);
   if(phone) drawText(page,`M: ${phone}`,30,775,7,[0.74,0.80,0.86]);
   if(email) drawText(page,`E: ${email}`,145,775,7,[0.74,0.80,0.86]);
@@ -1585,7 +1585,7 @@ function buildHeader(page,c,ref,date,period){
   drawText(page,'MOBILE',205,611,5.8,PDF_COLORS.muted,true);
   drawText(page,c.email||'-',335,625,7.8,PDF_COLORS.ink,true);
   drawText(page,'EMAIL',335,611,5.8,PDF_COLORS.muted,true);
-  drawText(page,'YUVARAJ AGENCIES',462,625,6.8,PDF_COLORS.red,true);
+  drawText(page,'Madhan Crackers',462,625,6.8,PDF_COLORS.red,true);
   drawText(page,'SUPPLIER',462,611,5.8,PDF_COLORS.muted,true);
   return 588;
 }
@@ -1656,7 +1656,7 @@ function buildPdfPages(){
     // Footer branding.
     page.push({type:'line',x1:28,x2:567,y:36,stroke:PDF_COLORS.line,lineWidth:0.6});
     drawText(page,'Please confirm final stock, rates and delivery before payment.',28,23,6.5,PDF_COLORS.muted);
-    drawText(page,`${BUSINESS_CONFIG.name||'YUVARAJ AGENCIES'} • ${ref}`,392,23,6.2,PDF_COLORS.muted,true);
+    drawText(page,`${BUSINESS_CONFIG.name||'Madhan Crackers'} • ${ref}`,392,23,6.2,PDF_COLORS.muted,true);
     pages.push(page);if(index>=rows.length)break;
   }
   return {pages,c,ref};
@@ -1711,13 +1711,13 @@ function initializeApp(){
   setupReveal();
   attachRippleEffects();
 
-  console.log(`Yuvaraj Agencies loaded: ${products.length} products`);
+  console.log(`Madhan Crackers loaded: ${products.length} products`);
 }
 document.addEventListener("DOMContentLoaded",initializeApp);
 
 /* ===== feature-patch.js ===== */
 /*
-  YUVARAJ AGENCIES — FEATURE-ONLY PATCH
+  Madhan Crackers — FEATURE-ONLY PATCH
   V12: preserves the existing visual design/layout and only restores/adds interaction features.
 */
 (function(){
