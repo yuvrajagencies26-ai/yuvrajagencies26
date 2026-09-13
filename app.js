@@ -1149,7 +1149,7 @@ function renderProducts(list = products) {
     return `<article class="product-card ${isOut ? "is-out" : ""}" style="--delay:${Math.min(index*.035,.5)}s">
       <div class="product-image-wrap">${ribbon}<span class="product-number">#${product.number}</span>
       <span class="status">${stockLabel(stock)}</span>
-      <button class="wish-btn ${wish ? "active" : ""}" onclick="event.stopPropagation();toggleWishlist(${product.id})">${wish ? "♥":"♡"}</button>
+      <button class="wish-btn ${wishlist.includes(product.id) ? "active" : ""}" onclick="event.stopPropagation();toggleWishlist(${product.id},this)">${wishlist.includes(product.id) ? "\u2665":"\u2661"}</button>
       ${getProductImage(product)}</div>
       <div class="product-info"><div class="category-label">${product.category}</div><h3 onclick="openProduct(${product.id})" class="product-title-link">${product.name}</h3>
       <div class="product-bottom"><div>${priceHTML}</div><div class="qty-control"><button onclick="changeProductQty(${product.id},-1)">−</button><input id="qty-${product.id}" type="number" min="1" value="1"><button onclick="changeProductQty(${product.id},1)">+</button></div></div>
@@ -1375,7 +1375,7 @@ function updateCartUI() {
   if (!cart.length) {
     wrap.innerHTML = `<div class="empty-cart"><div class="empty-cart-icon">🛒</div>
       <h3>Your enquiry is empty</h3><p>Add products from the catalogue.</p>
-      <button onclick="closeEnquiryCart();scrollToProducts()">Browse Products</button></div>`;
+      <button onclick="window.location.href='catalogue.html'">Browse Products</button></div>`;
   } else {
     wrap.innerHTML = cart.map(item => {
       const p = products.find(x => x.id === item.id);
@@ -1439,11 +1439,32 @@ document.addEventListener("DOMContentLoaded", function () {
 /* ===== wishlist.js ===== */
 let wishlist=JSON.parse(localStorage.getItem("yuvaraj_wishlist")||"[]");
 
-function toggleWishlist(id){
-  const i=wishlist.indexOf(id);
-  if(i>=0){wishlist.splice(i,1);showToast("Removed from favourites");}
-  else{wishlist.push(id);showToast("Added to favourites ♥");}
-  localStorage.setItem("yuvaraj_wishlist",JSON.stringify(wishlist));const fc=$("favoriteCount");if(fc)fc.textContent=wishlist.length;refreshProducts();
+function toggleWishlist(id, button = null){
+  const i = wishlist.indexOf(id);
+  if(i >= 0){
+    wishlist.splice(i,1);
+    showToast("Removed from favourites");
+  } else {
+    wishlist.push(id);
+    showToast("Added to favourites ♥");
+  }
+
+  localStorage.setItem("yuvaraj_wishlist", JSON.stringify(wishlist));
+  const active = wishlist.includes(id);
+
+  if(button){
+    button.classList.toggle("active", active);
+    button.textContent = active ? "\u2665" : "\u2661";
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+    button.setAttribute("aria-label", active ? "Remove from favourites" : "Add to favourites");
+  }
+
+  const fc = $("favoriteCount");
+  if(fc) fc.textContent = wishlist.length;
+
+  if(document.getElementById("productGrid")){
+    refreshProducts();
+  }
 }
 
 function showWishlist(){showFavoritesOnly();}
@@ -1866,7 +1887,7 @@ document.addEventListener("DOMContentLoaded",initializeApp);
       const ribbon=product.newArrival?'<span class="ribbon new">NEW</span>':product.popular?'<span class="ribbon best">BEST</span>':'';
       const priceHTML=discount>0?`<div class="price-stack"><strong>${formatPrice(finalPrice)}</strong><del>${formatPrice(product.price)}</del><em>${discount}% OFF</em></div>`:`<strong>${formatPrice(finalPrice)}</strong>`;
       return `<article class="product-card ${isOut?"is-out":""}" style="--delay:${Math.min(index*.035,.5)}s">
-        <div class="product-image-wrap">${ribbon}<span class="product-number">#${product.number}</span><span class="status">${typeof stockLabel==="function"?stockLabel(stock):"Available"}</span>${getProductImage(product)}</div>
+        <div class="product-image-wrap">${ribbon}<span class="product-number">#${product.number}</span><span class="status">${typeof stockLabel==="function"?stockLabel(stock):"Available"}</span><button class="wish-btn ${wishlist.includes(product.id) ? "active" : ""}" type="button" aria-label="${wishlist.includes(product.id) ? "Remove from favourites" : "Add to favourites"}" aria-pressed="${wishlist.includes(product.id) ? "true" : "false"}" onclick="event.stopPropagation();toggleWishlist(${product.id},this)">${wishlist.includes(product.id) ? "\u2665" : "\u2661"}</button>${getProductImage(product)}</div>
         <div class="product-info"><div class="category-label">${product.category}</div><h3 onclick="openProduct(${product.id})" class="product-title-link">${product.name}</h3>
         <div class="product-bottom"><div>${priceHTML}</div><div class="qty-control"><button onclick="changeProductQty(${product.id},-1)">−</button><input id="qty-${product.id}" type="number" min="1" value="1"><button onclick="changeProductQty(${product.id},1)">+</button></div></div>
         <span class="qty-rule">Quantity can be changed before enquiry</span>
