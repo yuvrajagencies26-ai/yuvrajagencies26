@@ -3286,3 +3286,416 @@ body.dark-mode .theme-toggle{
 }
 
 /* === CHATGPT FINAL UI POLISH V5 END === */
+
+/* === CHATGPT PRO HEADER V6 START === */
+
+:root{
+  --pro-header-bg: rgba(15, 23, 42, 0.92);
+  --pro-header-border: rgba(255,255,255,0.08);
+  --pro-header-shadow: 0 10px 30px rgba(2,6,23,0.22);
+
+  --pro-brand-light: #0f172a;
+  --pro-tag-light: #64748b;
+  --pro-brand-dark: #f8fafc;
+  --pro-tag-dark: #cbd5e1;
+
+  --pro-home-a: #334155;
+  --pro-home-b: #475569;
+
+  --pro-products-a: #1d4ed8;
+  --pro-products-b: #2563eb;
+
+  --pro-enquiry-a: #b45309;
+  --pro-enquiry-b: #d97706;
+
+  --pro-payment-a: #047857;
+  --pro-payment-b: #059669;
+}
+
+/* Brand colors */
+.brand-copy strong,
+#brandName{
+  color: var(--pro-brand-light) !important;
+}
+.brand-copy small{
+  color: var(--pro-tag-light) !important;
+}
+body.dark-mode .brand-copy strong,
+body.dark-mode #brandName{
+  color: var(--pro-brand-dark) !important;
+}
+body.dark-mode .brand-copy small{
+  color: var(--pro-tag-dark) !important;
+}
+
+/* Sticky professional header */
+.site-header{
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+  background: transparent !important;
+  backdrop-filter: blur(10px);
+}
+
+.site-header .nav{
+  background: var(--pro-header-bg) !important;
+  border-bottom: 1px solid var(--pro-header-border) !important;
+  box-shadow: var(--pro-header-shadow) !important;
+}
+
+/* Theme toggle visible */
+.theme-toggle{
+  display: grid !important;
+  place-items: center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border-radius: 14px !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  background: rgba(255,255,255,0.10) !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 18px rgba(2,6,23,0.16) !important;
+  cursor: pointer !important;
+}
+#themeIcon{
+  display: block !important;
+  font-size: 20px !important;
+  line-height: 1 !important;
+}
+body:not(.dark-mode) .theme-toggle{
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(15,23,42,0.10) !important;
+  box-shadow: 0 8px 18px rgba(15,23,42,0.10) !important;
+}
+
+/* Keep upper row always same */
+.site-header .brand,
+.site-header .header-whatsapp,
+.site-header .cart-button,
+.site-header .theme-toggle{
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* Pro nav palette - same desktop and mobile */
+.payment-nav a{
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  box-shadow: 0 8px 18px rgba(2,6,23,0.14) !important;
+  transition: transform .18s ease, filter .18s ease, box-shadow .18s ease !important;
+}
+
+.payment-nav a:nth-child(1){
+  background: linear-gradient(135deg, var(--pro-home-a), var(--pro-home-b)) !important;
+}
+.payment-nav a:nth-child(2){
+  background: linear-gradient(135deg, var(--pro-products-a), var(--pro-products-b)) !important;
+}
+.payment-nav a:nth-child(3){
+  background: linear-gradient(135deg, var(--pro-enquiry-a), var(--pro-enquiry-b)) !important;
+}
+.payment-nav a:nth-child(4){
+  background: linear-gradient(135deg, var(--pro-payment-a), var(--pro-payment-b)) !important;
+}
+.payment-nav a:hover{
+  transform: translateY(-1px) !important;
+  filter: brightness(1.04) !important;
+}
+.payment-nav a.active{
+  outline: 2px solid rgba(255,255,255,0.40) !important;
+  outline-offset: -2px !important;
+  box-shadow:
+    0 10px 24px rgba(2,6,23,0.18),
+    inset 0 0 0 1px rgba(255,255,255,0.08) !important;
+}
+
+/* Header WhatsApp and Enquiry keep clean */
+.header-whatsapp{
+  background: #25D366 !important;
+  color: #ffffff !important;
+}
+.cart-button{
+  box-shadow: 0 8px 18px rgba(225,29,72,0.22) !important;
+}
+
+/* Desktop layout */
+@media (min-width:769px){
+
+  :root{
+    --site-header-height: 92px !important;
+  }
+
+  body{
+    padding-top: 0 !important;
+  }
+
+  .site-header .nav{
+    width: min(1180px, calc(100% - 28px)) !important;
+    margin: 0 auto !important;
+    padding: 12px 0 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) 48px 52px 84px !important;
+    grid-template-rows: 56px 52px !important;
+    grid-template-areas:
+      "brand theme wa cart"
+      "links links links links" !important;
+    gap: 10px !important;
+    align-items: center !important;
+    border-radius: 0 0 18px 18px !important;
+  }
+
+  .site-header .brand{
+    grid-area: brand !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    min-width: 0 !important;
+  }
+
+  .site-header .brand-logo{
+    width: 54px !important;
+    height: 54px !important;
+    min-width: 54px !important;
+    border-radius: 14px !important;
+  }
+
+  .site-header .brand-copy{
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+  }
+
+  .site-header .brand-copy strong,
+  .site-header #brandName{
+    font-size: 18px !important;
+    line-height: 1.12 !important;
+    white-space: normal !important;
+  }
+
+  .site-header .brand-copy small{
+    font-size: 10px !important;
+    line-height: 1.15 !important;
+  }
+
+  .site-header .theme-toggle{
+    grid-area: theme !important;
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+  }
+
+  .site-header .header-whatsapp{
+    grid-area: wa !important;
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
+    min-height: 52px !important;
+  }
+
+  .site-header .cart-button{
+    grid-area: cart !important;
+    width: 84px !important;
+    min-width: 84px !important;
+    height: 52px !important;
+    min-height: 52px !important;
+  }
+
+  .site-header .payment-nav{
+    grid-area: links !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0,1fr)) !important;
+    gap: 10px !important;
+    position: sticky !important;
+    top: 66px !important;
+    z-index: 2 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .site-header .payment-nav a{
+    min-height: 46px !important;
+    border-radius: 14px !important;
+    font-size: 14px !important;
+    padding: 0 12px !important;
+  }
+}
+
+/* Mobile layout */
+@media (max-width:768px){
+
+  :root{
+    --site-header-height: 122px !important;
+  }
+
+  body{
+    padding-top: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  .site-header .nav{
+    width: calc(100% - 16px) !important;
+    margin: 0 auto !important;
+    min-height: 118px !important;
+    padding: 8px 0 !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) 42px 42px 72px !important;
+    grid-template-rows: 54px 42px !important;
+    grid-template-areas:
+      "brand theme wa cart"
+      "links links links links" !important;
+    gap: 6px !important;
+    align-items: center !important;
+    border-radius: 0 0 16px 16px !important;
+  }
+
+  .site-header .brand{
+    grid-area: brand !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    min-width: 0 !important;
+  }
+
+  .site-header .brand-logo{
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    border-radius: 12px !important;
+  }
+
+  .site-header .brand-copy{
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+  }
+
+  .site-header .brand-copy strong,
+  .site-header #brandName{
+    font-size: 12px !important;
+    line-height: 1.15 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+  }
+
+  .site-header .brand-copy small{
+    font-size: 8px !important;
+    line-height: 1.1 !important;
+  }
+
+  .site-header .theme-toggle{
+    grid-area: theme !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+  }
+
+  .site-header .header-whatsapp{
+    grid-area: wa !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+  }
+
+  .site-header .cart-button{
+    grid-area: cart !important;
+    width: 72px !important;
+    min-width: 72px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+  }
+
+  .site-header .payment-nav{
+    grid-area: links !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0,1fr)) !important;
+    gap: 6px !important;
+    position: sticky !important;
+    top: 60px !important;
+    z-index: 2 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .site-header .payment-nav a{
+    min-height: 40px !important;
+    border-radius: 12px !important;
+    font-size: 10px !important;
+    padding: 0 4px !important;
+  }
+}
+
+@media (max-width:390px){
+  .site-header .nav{
+    width: calc(100% - 12px) !important;
+    grid-template-columns: minmax(0,1fr) 38px 38px 64px !important;
+    gap: 5px !important;
+  }
+
+  .site-header .brand-logo{
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+  }
+
+  .site-header .brand-copy strong,
+  .site-header #brandName{
+    font-size: 10px !important;
+  }
+
+  .site-header .brand-copy small{
+    font-size: 7px !important;
+  }
+
+  .site-header .theme-toggle,
+  .site-header .header-whatsapp{
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+  }
+
+  .site-header .cart-button{
+    width: 64px !important;
+    min-width: 64px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+  }
+
+  .site-header .payment-nav a{
+    min-height: 36px !important;
+    font-size: 9px !important;
+  }
+}
+
+/* === CHATGPT PRO HEADER V6 END === */
+
+/* === CHATGPT V6.1 CONTACT NUMBER START === */
+.footer-whatsapp-number{
+  margin-left:4px!important;
+  font-weight:700!important;
+  color:inherit!important;
+}
+.footer-whatsapp-link:hover .footer-whatsapp-number{
+  color:#25D366!important;
+}
+/* === CHATGPT V6.1 CONTACT NUMBER END === */
